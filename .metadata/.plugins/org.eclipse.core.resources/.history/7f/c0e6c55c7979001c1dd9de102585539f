@@ -1,0 +1,6 @@
+package classroster.controller;
+
+public class ClassRosterController {
+
+//	private UserIO io = new UserIOConsoleImpl();
+}

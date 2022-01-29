@@ -1,0 +1,5 @@
+package classroster.dao.tests;
+
+public class ClassRosterDaoStubImpl {
+
+}

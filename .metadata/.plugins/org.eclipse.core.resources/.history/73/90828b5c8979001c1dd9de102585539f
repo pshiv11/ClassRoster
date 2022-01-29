@@ -1,0 +1,18 @@
+package classroster;
+
+import classroster.controller.ClassRosterController;
+import classroster.ui.UserIO;
+import classroster.ui.UserIOConsoleImpl;
+
+public class App {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		UserIO myIo = new UserIOConsoleImpl();
+		ClassRosterDao myDao = new ClassRosterDaoFileImpl();
+		
+		ClassRosterController controller = new ClassRosterController();
+		controller.run();
+	}
+
+}

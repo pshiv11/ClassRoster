@@ -1,0 +1,107 @@
+package classroster.dao.tests;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import classroster.dao.ClassRosterAuditDao;
+import classroster.dao.ClassRosterDao;
+import classroster.dao.ClassRosterPersistenceException;
+import classroster.dto.Student;
+import classroster.service.ClassRosterDuplicateIdException;
+import classroster.service.ClassRosterDataValidationException;
+import classroster.service.ClassRosterServiceLayer;
+import classroster.service.ClassRosterServiceLayerImpl;
+
+class ClassRosterServiceLayerImplTest {
+
+	private ClassRosterServiceLayer service;
+	
+	public ClassRosterServiceLayerImplTest() {
+		ClassRosterDao dao = new ClassRosterDaoStubImpl();
+		ClassRosterAuditDao auditDao = new ClassRosterAuditDaoStubImpl();
+		
+		service = new ClassRosterServiceLayerImpl(dao, auditDao);
+	}
+	
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterAll
+	static void tearDownAfterClass() throws Exception {
+	}
+
+	@BeforeEach
+	void setUp() throws Exception {
+	}
+
+	@AfterEach
+	void tearDown() throws Exception {
+	}
+
+	@Test
+	void testCreateValidStudent() {
+		//ARRANGE
+		Student student = new Student("0002");
+		student.setFirstName("Charlse");
+		student.setFirstName("Babbage");
+		student.setCohert(".NET-May-1845");
+		
+		//ACT
+		try {
+			service.createStudent(student);
+		} catch(ClassRosterDuplicateIdException | ClassRosterDataValidationException | ClassRosterPersistenceException e) {
+			fail("Student was valid. No exception should have been thrown");
+		}
+				
+	}
+	
+	@Test
+	public void testCreateDuplicateIdStudent() {
+		
+		//ARRANGE
+		Student student = new Student("0002");
+		student.setFirstName("Charlse");
+		student.setFirstName("Babbage");
+		student.setCohert(".NET-May-1845");
+		
+		//ACT
+		try {
+			service.createStudent(student);
+			fail("Expected Duplicate ID Exception was not thrown");
+		} catch(ClassRosterDataValidationException | ClassRosterPersistenceException e) {
+			//ASSERT
+			fail("Incorrect exception was thrown");
+		}
+		
+		
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

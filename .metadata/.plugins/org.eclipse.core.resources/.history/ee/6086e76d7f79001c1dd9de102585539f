@@ -1,0 +1,23 @@
+package classroster.ui;
+
+public class ClassRosterView {
+	private UserIO io = new UserIOConsoleImpl();
+	
+	public int printMenuAndGetSelection() {
+		boolean keepGoing = true;
+		int menuSelection = 0;
+		
+		while(keepGoing) {
+			io.print("Main Menu");
+			io.print("1: List Student IDs");
+			io.print("2: Create New Student");
+			io.print("3: View a Student");
+			io.print("4: Remove a Student");
+			io.print("5: Exit");
+		
+			menuSelection = io.readInt("Please select from above choices", 1, 5);
+	}
+		
+		return menuSelection;
+
+}

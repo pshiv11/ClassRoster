@@ -1,0 +1,10 @@
+package classroster.ui;
+
+public class ClassRosterView {
+	private UserIO io = new UserIOConsoleImpl();
+	
+	public int printMenuAndGetSelection() {
+		
+	}
+
+}

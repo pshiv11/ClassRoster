@@ -1,0 +1,114 @@
+package classroster.dao;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import classroster.dto.Student;
+
+public class ClassRosterDaoFileImpl implements ClassRosterDao {
+	
+	public static final String ROSTER_FILE = "roster.txt";
+	public static final String DELIMETER = "::";
+	
+	private Map<String, Student> students = new HashMap<>();
+
+	@Override
+	public Student addStudent(String studentId, Student student) {
+		// TODO Auto-generated method stub
+		Student prevStudent = students.put(studentId, student);
+		return prevStudent;
+	}
+
+	@Override
+	public List<Student> getAllStudents() {
+		// TODO Auto-generated method stub
+		return new ArrayList<Student>(students.values());
+	}
+
+	@Override
+	public Student getStudent(String studentId) {
+		// TODO Auto-generated method stub
+		return students.get(studentId);
+	}
+
+	@Override
+	public Student removeStudent(String studentId) {
+		// TODO Auto-generated method stub
+		Student removedStudent = students.remove(studentId);
+		return removedStudent;
+	}
+	
+	private Student unMarshallStudent(String studentAsText) {
+		String [] studentTokens = studentAsText.split(DELIMETER);
+		String studentId = studentTokens[0];
+		String firstName = studentTokens[1];
+		String lastName = studentTokens[2];
+		String cohert = studentTokens[3];
+		Student studentFromFile = new Student(studentId);
+		studentFromFile.setFirstName(firstName);
+		studentFromFile.setLastName(lastName);
+		studentFromFile.setCohert(cohert);
+		
+		return studentFromFile;
+	}
+	
+	private void loadRoster() throws ClassRosterDaoException {
+		Scanner scan;
+		
+		try {
+			scan= new Scanner(new BufferedReader(new FileReader(ROSTER_FILE)));
+		}catch(FileNotFoundException e) {
+			throw new ClassRosterDaoException("-_- Could not load roster data into memory.", e);
+		}
+		
+		String currentLine;
+		Student currentStudent;
+		
+		while(scan.hasNextLine()) {
+			currentLine = scan.nextLine();
+			currentStudent = this.unMarshallStudent(currentLine);
+			students.put(currentStudent.getStudentId(), currentStudent);
+		}
+		scan.close();
+	}
+	
+	
+	private String marshallStudent(Student studentObj) {
+		String studentAsText = studentObj.getStudentId() + DELIMETER;
+		studentAsText += studentObj.getFirstName() + DELIMETER;
+		studentAsText += studentObj.getLastName() + DELIMETER;
+		studentAsText += studentObj.getCohert() + DELIMETER;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,10 @@
+package classroster.dto;
+
+public class Student {
+	private String firstName;
+	private String lastName;
+	private String studentId;
+	
+	//programming language + cohert month/year
+	private String cohert;
+}

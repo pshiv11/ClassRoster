@@ -1,0 +1,63 @@
+package classroster.dto;
+
+public class Student {
+
+	private String firstName;
+	private String lastName;
+	private String studentId;
+	
+	//programming language + cohert month/year
+	private String cohert;
+	
+	
+
+	public Student(String studentId) {
+		this.studentId = studentId;
+	}
+	
+	
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getCohert() {
+		return cohert;
+	}
+
+	public void setCohert(String cohert) {
+		this.cohert = cohert;
+	}
+
+	public String getStudentId() {
+		return studentId;
+	}
+	
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return super.equals(obj);
+	}
+	
+	
+}

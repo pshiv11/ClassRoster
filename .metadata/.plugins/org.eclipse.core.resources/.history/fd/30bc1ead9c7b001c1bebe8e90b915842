@@ -1,0 +1,18 @@
+package classroster.dao;
+
+public class ClassRosterAudioDaoFileImpl implements ClassRosterAuditDao {
+	
+	public static final String AUDIT_FILE = "audit.txt";
+
+	@Override
+	public void writeAuditEntry(String entry) throws ClassRosterPersistenceException {
+		PrintWriter out;
+		
+		try {
+			out = new PrintWriter(new FileWriter(AUDIT_FILE));
+		}
+		
+		
+	}
+
+}

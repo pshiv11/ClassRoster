@@ -1,0 +1,77 @@
+package classroster.dao.tests;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.FileWriter;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import classroster.dao.ClassRosterDao;
+import classroster.dao.ClassRosterDaoFileImpl;
+import classroster.dto.Student;
+
+class ClassRosterAuditDaoFileImplTest {
+	
+	ClassRosterDao testDao;
+
+	public ClassRosterAuditDaoFileImplTest() {
+		
+	}
+
+	@BeforeAll
+	static void setUpBeforeClass() throws Exception {
+	}
+
+	@AfterAll
+	static void tearDownAfterClass() throws Exception {
+	}
+
+	@BeforeEach
+	void setUp() throws Exception {
+		String testFile = "testroster.txt";
+		new FileWriter(testFile);
+		testDao= new ClassRosterDaoFileImpl(testFile);
+	}
+
+	@AfterEach
+	void tearDown() throws Exception {
+	}
+
+	@Test
+	void testAddGetStudent() throws Exception {
+		//create our test method inputs
+		
+		String studentId = "0001";
+		Student student = new Student(studentId);
+		student.setFirstName("Ada");
+		student.setLastName("Lovelace");
+		student.setCohert("Java-May-1845");
+		
+		
+	//Add the student to DAO
+		this.testDao.addStudent(studentId,  student);
+		
+	//get the student from DAO
+		Student retrievedStudent = testDao.getStudent(studentId);
+		
+	//check the data is equal
+		assertEquals(student.equals(retrievedStudent));
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

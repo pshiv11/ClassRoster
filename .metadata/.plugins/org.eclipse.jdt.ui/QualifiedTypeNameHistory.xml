@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="classroster.controller.ClassRosterController"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="classroster.ui.UserIO"/>
+    <fullyQualifiedTypeName name="classroster.ui.UserIOConsoleImpl"/>
+    <fullyQualifiedTypeName name="classroster.dao.ClassRosterDaoFileImpl"/>
+    <fullyQualifiedTypeName name="classroster.ui.ClassRosterView"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="classroster.service.ClassRosterDataValidationException"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="classroster.dao.ClassRosterAuditDaoFileImpl"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="classroster.service.ClassRosterServiceLayer"/>
+    <fullyQualifiedTypeName name="classroster.dao.ClassRosterDao"/>
+    <fullyQualifiedTypeName name="classroster.dao.ClassRosterAuditDao"/>
+    <fullyQualifiedTypeName name="classroster.service.ClassRosterServiceLayerImpl"/>
+    <fullyQualifiedTypeName name="classroster.dto.Student"/>
+    <fullyQualifiedTypeName name="classroster.service.ClassRosterDuplicateIdException"/>
+    <fullyQualifiedTypeName name="classroster.dao.ClassRosterPersistenceException"/>
+</qualifiedTypeNameHistroy>

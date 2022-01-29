@@ -1,0 +1,37 @@
+package classroster.dao.tests;
+
+import java.util.List;
+
+import classroster.dao.ClassRosterDao;
+import classroster.dao.ClassRosterPersistenceException;
+import classroster.dto.Student;
+
+public class ClassRosterDaoStubImpl implements ClassRosterDao {
+	
+	public Student onlyStudent;
+
+	@Override
+	public Student addStudent(String studentId, Student student) throws ClassRosterPersistenceException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Student> getAllStudents() throws ClassRosterPersistenceException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Student getStudent(String studentId) throws ClassRosterPersistenceException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Student removeStudent(String studentId) throws ClassRosterPersistenceException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

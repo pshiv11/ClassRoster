@@ -1,0 +1,7 @@
+package classroster.dao;
+
+public interface ClassRosterAudiDao {
+	
+	public void writeAuditEntry(String entry) throws ClassRosterPersistenceException;
+
+}
